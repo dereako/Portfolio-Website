@@ -16,6 +16,7 @@ window.mobilecheck = function() {
 	return check;
 }
 
+// Load single project from array, using the index of p
 function loadProj() {
 	if (loading==false) {
 		loading = true;
@@ -23,6 +24,7 @@ function loadProj() {
 			$('.container').append(data);
 			loading = false;
 			if (p+1 < projects.length && mobilecheck()) {
+				// Make sure the mobile view fills up to the bottom, so they can scroll down
 				if ($(window).height() >= $(document).height()) {
 					p++;
 					loadProj();
@@ -30,9 +32,11 @@ function loadProj() {
 					$('.loading').hide();
 				}
 			} else if (p+1 < projects.length && !mobilecheck()) {
+				// Load the next project (desktop only)...
 				p++;
 				loadProj();
 			} else {
+				// ...until all projects are loaded
 				allLoaded = true;
 				$('.loading').hide();
 				if (!mobilecheck()) {
@@ -44,12 +48,25 @@ function loadProj() {
 	}
 }
 
+// Touch enough to trigger the slide
 function swipe(event, phase, direction, distance) {
 	if (phase=="end" && distance >= 100) {
 		if (direction=="left") { slide('right'); } else if (direction=="right") { slide('left'); }
 	}
 }
 
+// Display or hide additional information when clicking the question marks
+function toggleWhat() {
+	if ($('.what').hasClass('active')) {
+		$('.what').removeClass('active');
+		$('.more').slideUp();
+	} else {
+		$('.what').addClass('active');
+		$('.more').slideDown();
+	}
+}
+
+// Get the start and end points for all projects, used later to compare against scroll
 function sizeUp() {
 	topList = $('.project').map(function() {
 		return Math.round($(this).position().top);
@@ -59,6 +76,7 @@ function sizeUp() {
 	}).get();
 }
 
+// Enable left/right scrolling using the shadows (desktop only)
 function initHover() {
 	$('.hoverL').hover(function() {
 		if ($(this).parent().parent('.project').hasClass('chosen')) {
@@ -86,14 +104,17 @@ function initHover() {
 	});	
 }
 
+// Full opacity to the currently chosen project, and only that project
 function chosenOne() {	
 	$(".project").eq( currently ).addClass("chosen").siblings(".project").removeClass("chosen");
 	var label = $(".project").eq( currently ).data('label');
+	// Update the name label
 	$('#label').html(label);	
 }
 
+// Compare the current position against all the project starts to figure out which project is current
 function getCurrent() {
-	var top = $(window).scrollTop() - Math.floor(parseInt($('.project:first .viewer').offset().top))*2 + Math.floor(parseInt($('.list').css("padding-top"))); // + $(window).height(); // + Math.floor(parseInt($('.list').css("padding-top")));
+	var top = $(window).scrollTop() - Math.floor(parseInt($('.project:first .viewer').offset().top))*2 + Math.floor(parseInt($('.list').css('padding-top')));
 	if ($(window).scrollTop() + $(window).height() >= $(document).height() - Math.floor(parseInt($('.project:last').css('padding-bottom')))) {
 		return (projects.length-1);
 	} else if (top<=topList[0]) {
@@ -107,6 +128,7 @@ function getCurrent() {
 	}
 }
 
+// Navigate to a specified project
 function goTo(which) {
 	if (done==true && allLoaded==true) {
 		done = false;
@@ -119,6 +141,7 @@ function goTo(which) {
 	}
 }
 
+// Move left or right through slides by the actual slide width
 function slide(dir) {
 	if (done==true) {
 		var anim = false;
@@ -164,16 +187,24 @@ function slide(dir) {
 }
 
 $(document).ready(function() {
+	// Load the very first project
 	loadProj();
+	
+	// Give back to top button action (mobile only)
+	$('.backtop').on('click',function() {
+		scrollTo(0,0);
+	});
 });
-		
+
 $(window).scroll(function(e) {
+	// Bind the current project check to the scroll
 	var checkIndex = getCurrent(); 
 	if(checkIndex !== currently) {
 		currently = checkIndex;
 		chosenOne();
 	}
-	if (p+1 < projects.length && mobilecheck()) {
+	// Load the next project as you scroll down (mobile only)
+	if (loading===false && p+1 < projects.length && mobilecheck()) {
 		if (($(window).scrollTop() + $(window).height()) >= ($(document).height() - 200)) {
 			$('.loading').show();
 			p++;
@@ -188,6 +219,7 @@ $(window).scroll(function(e) {
 });
 
 $(document).keydown(function (e) {
+	// Enable keyboard control of the slides, holding the arrows down accelerates the scroll
 	var keyCode = e.keyCode || e.which,
 		arrow = {left: 37, up: 38, right: 39, down: 40 };
 	switch (keyCode) {
@@ -211,6 +243,7 @@ $(document).keydown(function (e) {
 });
 
 $(document).keyup(function (e) {
+	// Letting go of the arrow key resets the scroll speed
 	var keyCode = e.keyCode || e.which,
 		arrow = {left: 37, right: 39 };
 	switch (keyCode) {
@@ -223,7 +256,9 @@ $(document).keyup(function (e) {
 	}
 });
 
+// Make sure the sizes are tracked on resize, as the window width determines slide size
 $(window).resize(function() { sizeUp(); });
+
 
 /*
 * @fileOverview TouchSwipe - jQuery Plugin
