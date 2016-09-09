@@ -13,6 +13,10 @@
 		@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 			.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; }
 		}
+		@media only screen and (max-width: 400px) {
+			.insta-crop { height:420px; overflow: hidden; }
+			#statigram { height: 100%; }
+		}
 	</style>
 </head>
 <body>
@@ -57,7 +61,9 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-                	<iframe id="statigram" src="http://statigr.am/widget.php?choice=myfeed&amp;username=dereako&amp;show_infos=false&amp;linking=statigram&amp;width=364&amp;height=482&amp;mode=grid&amp;layout_x=2&amp;layout_y=2&amp;padding=8&amp;photo_border=false&amp;background=333333&amp;text=9E9E9E&amp;widget_border=true&amp;radius=5&amp;border-color=444444&amp;user_id=228499222&amp;time=1365534825558"></iframe>
+                    <div class="insta-crop">
+	                	<iframe id="statigram" src="http://statigr.am/widget.php?choice=myfeed&amp;username=dereako&amp;show_infos=false&amp;linking=statigram&amp;width=364&amp;height=482&amp;mode=grid&amp;layout_x=2&amp;layout_y=2&amp;padding=8&amp;photo_border=false&amp;background=292F33&amp;text=9E9E9E&amp;widget_border=true&amp;radius=5&amp;border-color=3e474e&amp;user_id=228499222&amp;time=1365534825558"></iframe>
+                    </div>
                     <div class="box bottom"></div>
                 </div>
                 <div class="left tweeter">
@@ -68,5 +74,6 @@
             </div>
         </div>
 	</div>
+    <?php include 'foot.php'; ?>
 </body>
 </html>

@@ -4,7 +4,6 @@
 <head>
 	<?php include 'head.php'; ?>
 	<title>Derek Hall | Work</title>
-	<script type="text/javascript" src="js/javascript.js"></script>
 </head>
 <body>
 	<div id="work">
@@ -15,5 +14,7 @@
            	<div class="backtop">Back to Top</div>
         </div>
 	</div>
+    <?php include 'foot.php'; ?>
+	<script type="text/javascript" src="js/javascript.js"></script>
 </body>
 </html>

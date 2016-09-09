@@ -323,13 +323,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 hr {
 	height: 1px;
-	background: #444;
+	background: #3e474e;
 	border: none;
 	margin: 10px 0;
 	clear: both;
 }
 input[type=text],input[type=password],input[type=email],select,textarea {
-	border: 1px solid #222;
+	border: 1px solid #1b2227;
 	color: #999;
 	background: rgba(0, 0, 0, 0.64);
 	padding: 6px;
@@ -340,7 +340,8 @@ input[type=text],input[type=password],input[type=email],select,textarea {
 	font-family: Helvetica, Arial, sans-serif;
 }
 input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,select:focus,textarea:focus {
-	border-color: #555;
+	border-color: #667680;
+	outline: none;
 }
 option {
 	background: #fff;
@@ -449,10 +450,10 @@ input[type=submit]:active,input[type=button]:active,.button:active {
 	width: 22.857%; /* 320 / 1400 */
 	height: 100%;
 	left: 4%; /* was 5, 70 / 1400 */
-	border-left: 1px solid #444;
-	border-right: 1px solid #333;
+	border-left: 1px solid #3e474e;
+	border-right: 1px solid #1b2227;
 	padding: 3.357% 0 1.714%; /* (47 || 24) / 1400 */
-	background: #2e2e2e;
+	background: #292F33;
 	z-index: 5;
 }
 #logo {
@@ -538,6 +539,8 @@ iframe {
 }
 #tweets iframe {
 	width: 100%;
+	border-left: 1px solid #667680 !important;
+	border-right: 1px solid #667680 !important;
 }
 .twitter-timeline {
 	height: 460px;
@@ -780,8 +783,8 @@ iframe {
 }
 
 .box {
-	background: #333;
-	border: 1px solid #444;
+	background: #292F33;
+	border: 1px solid #3e474e;
 	padding: 10px 20px 16px 20px;
 	border-radius: 5px;
 	width: 322px;
@@ -839,10 +842,9 @@ iframe {
 	float: right;
 }
 .grams {
-	position: relative;	
+	position: relative;
 }
 .upper {
-	background: #333;
 	width: 322px;
 	height: 43px;
 	position: absolute;
@@ -1003,6 +1005,12 @@ a:link.linker {
 	}
 	.tweeter {
 		display: block;
+		border-radius: 5px;
+		border: 1px solid #3e474e;
+		line-height: 0;
+	}
+	.tweeter iframe {
+		display: block;
 	}
 	.sep {
 		display: block;
@@ -1021,7 +1029,7 @@ a:link.linker {
 		height: auto;
 		padding: 0;
 		border: none;
-		border-bottom: 1px solid #444;
+		border-bottom: 1px solid #3e474e;
 		-webkit-box-shadow: 0px 2px 2px 0px rgba(21,21,21,.5);
 		box-shadow: 0px 2px 2px 0px rgba(21,21,21,.5);
 	}
@@ -1158,6 +1166,9 @@ a:link.linker {
 	#work #label {
 		font-size: 1em;
 		margin: 13px 10px 11px 0;
+	}
+	#nav {
+		padding-right: 2%;
 	}
 }
 @media (max-width: 590px) {

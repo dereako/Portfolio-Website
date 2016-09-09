@@ -14,7 +14,7 @@
             </a>
         </div>
         <div id="tweets">
-            <a class="twitter-timeline" href="https://twitter.com/derekhalldesign" target="external" data-widget-id="264444616831533056">Tweets by @derekhalldesign</a>
+            <a class="twitter-timeline" href="https://twitter.com/derekhalldesign" target="external" data-widget-id="264444616831533056" data-chrome="nofooter noheader">Tweets by @derekhalldesign</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
     </div>

@@ -66,6 +66,7 @@
             </div>
         </div>
 	</div>
+    <?php include 'foot.php'; ?>
     <script type="text/javascript">
 		var cur = 1;
 		var portSpeed = 4000;
