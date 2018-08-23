@@ -39,7 +39,7 @@
 									<?php if ($slide['type']=='image') { ?>
                                         <img src="work/<?=$slide['id']?>.jpg" width="<?=$slide['width']?>" height="<?=$slide['height']?>" alt="<?=$slide['caption']?>" title="<?=$slide['caption']?>" />
                                     <?php } else if ($slide['type']=='video') { ?>
-                                        <iframe width="<?=$slide['width']?>" height="<?=$slide['height']?>" src="http://www.youtube.com/embed/<?=$slide['src']?>" frameborder="0" allowfullscreen></iframe>
+                                        <iframe width="<?=$slide['width']?>" height="<?=$slide['height']?>" src="https://www.youtube.com/embed/<?=$slide['src']?>" frameborder="0" allowfullscreen></iframe>
                                     <?php } else if ($slide['type']=='text') { ?>
                                         <div class="words"><h4><?=$slide['caption']?></h4><?=nl2br($slide['src']);?></div>
                                     <?php } ?>
@@ -58,7 +58,7 @@
 			var speed = 300;
 			var timer = "";
 			var i = 1;
-			
+
 			function sizeUp() {
 				topList = $('.project').map(function() {
 					return $(this).position().top;
@@ -67,7 +67,7 @@
 					return $(this).height();
 				}).get();
 			}
-			
+
             function getCurrent() {
 				var top = $(window).scrollTop() + $(window).height() + parseInt($('.list').css("padding-top"));
                 for(var i=0; i<topList.length; i++) {
@@ -76,7 +76,7 @@
                     }
                 }
             }
-            
+
 			function goTo(which) {
 				if (done==true) {
 					done = false;
@@ -87,9 +87,9 @@
 					});
 				}
 			}
-			
+
             $(window).scroll(function(e) {
-                var checkIndex = getCurrent(); 
+                var checkIndex = getCurrent();
 				if(checkIndex !== currently) {
 					currently = checkIndex;
 					$(".project").eq( currently ).addClass("chosen").siblings(".project").removeClass("chosen");
@@ -97,7 +97,7 @@
 					$('#label').html(label);
 				}
             });
-			
+
 			function slide(dir) {
 				if (done==true) {
 					var anim = false;
@@ -116,7 +116,7 @@
 							}
 						}
 					}
-					
+
 					if (dir=='left') {
 						var sWidth = slidesWide[now-1];
 						var newX = oldX + sWidth;
@@ -141,7 +141,7 @@
 					}
 				}
 			}
-			
+
 			$('.hoverL').hover(function() {
 				if ($(this).parent().parent('.project').hasClass('chosen')) {
 					timer = setInterval(function() {
@@ -168,7 +168,7 @@
 				speed = 300;
 				i = 1;
 			});
-			
+
 			$(document).keydown(function (e) {
 				var keyCode = e.keyCode || e.which,
 					arrow = {left: 37, up: 38, right: 39, down: 40 };
@@ -191,7 +191,7 @@
 					break;
 				}
 			});
-			
+
 			$(document).keyup(function (e) {
 				var keyCode = e.keyCode || e.which,
 					arrow = {left: 37, right: 39 };
@@ -204,7 +204,7 @@
 					break;
 				}
 			});
-			
+
 			sizeUp();
 			$(window).resize(function() { sizeUp(); });
         </script>

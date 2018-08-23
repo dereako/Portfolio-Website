@@ -1,4 +1,4 @@
-<?php include 'connector.php'; 
+<?php include 'connector.php';
 $id = intval($_POST['proj']);
 $list = intval($_POST['width']);
 if ($list < 400) {
@@ -55,7 +55,7 @@ $targetH = intval($dims['MIN(height)']); ?>
                     <?php if ($slide['type']=='image') { ?>
                         <img src="work/<?php if ($list <= 450) { echo 'thumbs/'; } ?><?=$slide['id']?>.jpg" style="width: <?=$w?>px; height: <?=$h?>px; max-width: <?=$slide['width']?>px; max-height: <?=$slide['height']?>px;" alt="<?=$slide['caption']?>" title="<?=$slide['caption']?>" />
                     <?php } else if ($slide['type']=='video') { ?>
-                        <iframe class="youtube" width="<?=$w?>" height="<?=$h?>" src="http://www.youtube.com/embed/<?=$slide['src']?>" allowfullscreen></iframe>
+                        <iframe class="youtube" width="<?=$w?>" height="<?=$h?>" src="https://www.youtube.com/embed/<?=$slide['src']?>" allowfullscreen></iframe>
                     <?php } else if ($slide['type']=='text') { ?>
                         <div class="words"><div class="inside"><h4><?=$slide['caption']?></h4><?=nl2br($slide['src']);?></div></div>
                     <?php } ?>
@@ -69,8 +69,8 @@ $targetH = intval($dims['MIN(height)']); ?>
 	$('#proj-<?=$id?> .slider').css('width','<?=$total?>px');
 	var total = 0;
 	if (mobilecheck()) {
-		$("#proj-<?=$id?> .viewer").swipe({ 
-			swipeStatus:swipe, 
+		$("#proj-<?=$id?> .viewer").swipe({
+			swipeStatus:swipe,
 			maxTimeThreshold:2000,
 			threshold:200,
 			triggerOnTouchEnd:false,

@@ -1,24 +1,9 @@
-ExpiresActive On
-ExpiresDefault A0
- 
-# Set up caching on media files for 1 year (forever?)
-<FilesMatch "\.(flv|ico|pdf|avi|gif|jpg|jpeg|png|swf|mov|ppt|doc|mp3|wmv|wav)$">
-ExpiresDefault A29030400
-Header append Cache-Control "public"
-</FilesMatch>
- 
-# Set up caching on media files for 1 week
-<FilesMatch "\.(xml|txt|html|js|css)$">
-ExpiresDefault A604800
-Header append Cache-Control "proxy-revalidate"
-</FilesMatch>
- 
-# Force no caching for dynamic files
-<FilesMatch "\.(php|cgi|pl|htm)$">
-ExpiresActive Off
-Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
-Header set Pragma "no-cache"
-</FilesMatch>
+AddHandler application/x-httpd-php5 .php
+AddType video/x-flv .flv
+AddType application/x-shockwave-flash .swf
+AddType video/mp4 .mp4 .mp4v .mpg4
+AddType video/ogg .ogv
+AddType application/octet-stream .mov .mp3 .zip
 
 ErrorDocument 400 /400.php
 ErrorDocument 401 /401.php
@@ -26,5 +11,45 @@ ErrorDocument 403 /403.php
 ErrorDocument 404 /404.php
 ErrorDocument 500 /500.php
 
-AddType video/mp4 mp4 mp4v mpg4
-AddType video/ogg ogv
+ExpiresActive On
+ExpiresDefault A0
+
+# Set up caching on media files for 1 year (forever?)
+<FilesMatch "\.(flv|ico|pdf|avi|gif|jpg|jpeg|png|swf|mov|ppt|doc|mp3|wmv|wav)$">
+ExpiresDefault A29030400
+Header append Cache-Control "public"
+</FilesMatch>
+
+# Set up caching on media files for 1 week
+<FilesMatch "\.(xml|txt|html|js|css)$">
+ExpiresDefault A604800
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+
+# Force no caching for dynamic files
+<FilesMatch "\.(php|cgi|pl|htm)$">
+ExpiresActive Off
+Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+Header set Pragma "no-cache"
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^derekhalldesigns?\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://derekhalldesign.com/$1 [R,L]
+RewriteCond %{HTTP_HOST} ^www\.derekhalldesigns?\.com [NC]
+RewriteRule ^(.*)$ https://derekhalldesign.com/$1 [R,L]
+</IfModule>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

@@ -287,7 +287,7 @@ table {
  *         ORIGINAL STYLES        |
  * --------------------------------
  */
- 
+
 /* HTML TAG STYLES */
 body {
 	padding: 0px;
@@ -319,7 +319,7 @@ ul {
 	padding-left: 20px;
 }
 h1,h2,h3,h4,h5,h6 {
-	color: #cfcfcf;	
+	color: #cfcfcf;
 }
 hr {
 	height: 1px;
@@ -380,25 +380,25 @@ input[type=submit]:active,input[type=button]:active,.button:active {
 	color: #999;
 }
 .click {
-	cursor: pointer;	
+	cursor: pointer;
 }
 .relative {
-	position: relative;	
+	position: relative;
 }
 .absolute {
-	position: absolute;	
+	position: absolute;
 }
 .large {
 	font-size: 1.333em; /* 16 / 12 */
-	line-height: 1.666em; /* 20 / 12 */	
+	line-height: 1.666em; /* 20 / 12 */
 }
 .med {
-	line-height: 1.167em; /* 14 / 12 */	
-	line-height: 1.5em; /* 18 / 12 */	
+	line-height: 1.167em; /* 14 / 12 */
+	line-height: 1.5em; /* 18 / 12 */
 }
 .slight {
 	font-size: 0.833em; /* 10 / 12 */
-	line-height: 1.167em; /* 14 / 12 */	
+	line-height: 1.167em; /* 14 / 12 */
 }
 .left {
 	float:left;
@@ -424,21 +424,21 @@ input[type=submit]:active,input[type=button]:active,.button:active {
 	margin-bottom: 3px;
 }
 .pad {
-	margin-right: 8px;	
+	margin-right: 8px;
 }
 .bold {
-	font-weight: bold;	
+	font-weight: bold;
 }
 .roman {
 	font-weight: normal !important;
 }
 .first {
 	margin-left: 0px !important;
-	padding-left: 0px !important;	
+	padding-left: 0px !important;
 }
 .last {
 	margin-right: 0px !important;
-	padding-right: 0px !important;	
+	padding-right: 0px !important;
 }
 .sep {
 	padding: 0 0.5em;
@@ -497,7 +497,7 @@ input[type=submit]:active,input[type=button]:active,.button:active {
 	z-index: 2;
 }
 #nav a:hover {
-	color: #fff !important;	
+	color: #fff !important;
 }
 #nav .on .color {
 	display: none;
@@ -770,7 +770,7 @@ iframe {
 	position: relative;
 	max-width: 420px;
 	max-height: 600px;
-	width: 40%;	
+	width: 40%;
 	height: 100%;
 }
 .portrait img {
@@ -821,7 +821,7 @@ iframe {
 	max-width: 310px;
 	min-width: 310px;
 	min-height: 80px;
-	max-height: 298px;	
+	max-height: 298px;
 }
 #connect .box input[type=email] {
 	margin-top: 16px;
@@ -841,6 +841,14 @@ iframe {
 	margin-top: 14px;
 	float: right;
 }
+.insta-crop {
+  margin-right: 24px;
+  border-left: 1px solid #3e474e;
+  border-right: 1px solid #3e474e;
+  margin-top: 56px;
+  padding: 8px 8px 0;
+  background: #292F33;
+}
 .grams {
 	position: relative;
 }
@@ -851,6 +859,10 @@ iframe {
 	padding: 14px 20px;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
+}
+.grams .upper {
+  height: 40px;
+  padding: 14px 20px 0;
 }
 
 .linker {
@@ -868,7 +880,7 @@ a:link.linker {
 	-webkit-transition: color 0s;
 	-moz-transition: color 0s;
 	-o-transition: color 0s;
-	transition: color 0s;	
+	transition: color 0s;
 }
 .linker:hover {
 	cursor: pointer;
@@ -904,7 +916,7 @@ a:link.linker {
 /* IF WEBKIT */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	input[type=file] {
-		color: #fff;	
+		color: #fff;
 		border: 0px !important;
 		white-space: normal;
 		background: none !important;
@@ -945,7 +957,7 @@ a:link.linker {
 	select {
 		padding-top: 4px;
 		padding-bottom: 2px;
-		height: 26px;	
+		height: 26px;
 	}
 	.linker {
 		height: 112px;
@@ -1078,7 +1090,7 @@ a:link.linker {
 		margin-left: 0;
 		padding-top: 48px;
 	}
-	
+
 	.loading {
 		width: 100%;
 	}
@@ -1088,7 +1100,7 @@ a:link.linker {
 	}
 	.hoverL {
 		width: 52%;
-		background: -moz-linear-gradient(left,  rgba(21,21,21,1) 0%, rgba(21,21,21,0) 5%); 
+		background: -moz-linear-gradient(left,  rgba(21,21,21,1) 0%, rgba(21,21,21,0) 5%);
 		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(21,21,21,1)), color-stop(5%,rgba(21,21,21,0)));
 		background: -webkit-linear-gradient(left,  rgba(21,21,21,1) 0%,rgba(21,21,21,0) 5%);
 		background: -o-linear-gradient(left,  rgba(21,21,21,1) 0%,rgba(21,21,21,0) 5%);
@@ -1104,11 +1116,11 @@ a:link.linker {
 		background: -ms-linear-gradient(left,  rgba(21,21,21,0) 95%,rgba(21,21,21,1) 100%);
 		background: linear-gradient(to right,  rgba(21,21,21,0) 95%,rgba(21,21,21,1) 100%);
 	}
-	
+
 	.video .hoverL, .video .hoverR, .video img {
 		display: none;
 	}
-	
+
 	.portion {
 		margin: 1.5em 0;
 	}
@@ -1147,7 +1159,7 @@ a:link.linker {
 		height: 100px;
 	}
 	.disc {
-		margin: 0 0 10px 0;	
+		margin: 0 0 10px 0;
 	}
 	#connect .container {
 		width: 364px;
@@ -1161,6 +1173,9 @@ a:link.linker {
 	.box, .tweeter {
 		margin: 0 0 20px 0;
 	}
+  .insta-crop {
+    margin: 56px 0 0 0;
+  }
 }
 @media (max-width: 620px) {
 	#work #label {

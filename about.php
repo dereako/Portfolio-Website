@@ -28,19 +28,23 @@
                             Attended: 2004 – 2008 <span class="sep">|</span> GPA: 3.8 (Highest Honors)
                         </div>
                     </div>
-                    
+
                     <div class="portion">
                         <div class="bold">Employment</div>
                         <div class="blurb">
-                            <a href="http://www.pearsestreet.com/" target="external">Pearse Street</a> in Salem, MA<br />
-                            Senior Front-End Developer 2008 – July 2015
+                            <a href="https://36creative.com/" target="external">36creative</a> in Salem, NH<br />
+                            Interactive Developer 2015 - present
                         </div>
                         <div class="blurb">
-                            <a href="http://www.dyerpr.com/" target="external">Dyer Associates</a> in Winthrop, ME<br />
+                            Pearse Street in Salem, MA<br />
+                            Senior Front-End Developer 2008 – 2015
+                        </div>
+                        <div class="blurb">
+                            Dyer Associates in Winthrop, ME<br />
                             Graphic Designer 2006 – 2008
                         </div>
                     </div>
-                    
+
                     <div class="portion">
                         <div class="bold">Technical Abilities</div>
                         <div class="blurb">
@@ -49,14 +53,14 @@
                             Mac, Windows, Word, Excel, Cinema 4D, Final Cut Pro
                         </div>
                     </div>
-                    
+
                     <div class="portion">
                         <div class="bold">Artistic Skills</div>
                         <div class="blurb">
                             Graphic Design, Animation, Sequential Art, Painting, Concepting
                         </div>
                     </div>
-                    
+
                     <div class="portion">
                         <div class="bold">Personal</div>
                         I married my best friend, and we have two incredibly cute children
@@ -72,7 +76,7 @@
 		var portSpeed = 4000;
 		var fadeSpeed = 500;
 		var changer;
-		
+
 		function changePort() {
 			next = cur + 1;
 			other = cur - 1;
@@ -87,7 +91,7 @@
 			},function() {
 				changer = setInterval('changePort()',portSpeed);
 			});
-			
+
 			changer = setInterval('changePort()',portSpeed);
 		});
 	</script>
